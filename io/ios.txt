@@ -1,0 +1,402 @@
+legacyrescue: 200 inputs and outputs, from real runs (io/ios.pl has the same as Prolog facts).
+
+1. rescue(append([a],[b],_242);concat_old([],[b,c,a],_280))
+   => append([a],[b],_242);append([b,c,a],[],_280)
+2. deprecated(append([a],[b],_332),member_old([],b))
+   => [member_old/2]
+3. answers(findall(x,concat_old([c],[b],_410),_418))
+   => [[_428,[x]]]-[[_452,[x]]]
+4. rescue(concat_old([],[c,b],_514);len_old(_530,[c,b]))
+   => append([c,b],[],_514);length([c,b],_530)
+5. deprecated(append([a],[b],_588),reverse([a,b],_606))
+   => []
+6. answers(rev_old([c,a,c],_670),len_old(_686,[c,b]))
+   => [[[c,a,c],2]]-[[[c,a,c],2]]
+7. rescue(member_old([b,c],a),concat_old([b],[b,a],_838))
+   => member(a,[b,c]),append([b,a],[b],_838)
+8. deprecated(member_old([c],a),rev_old([a,b,a],_922))
+   => [member_old/2,rev_old/2]
+9. answers(length([a],_980),concat_old([b],[],_1000))
+   => [[1,[b]]]-[[1,[b]]]
+10. rescue(findall(x,concat_old([a,c,a],[],_1108),_1116))
+   => findall(x,append([],[a,c,a],_1108),_1116)
+11. deprecated(concat_old([b],[a,c],_1180))
+   => [concat_old/3]
+12. answers(append([a],[b],_1222))
+   => [[[a,b]]]-[[[a,b]]]
+13. rescue(member_old([b],b))
+   => member(b,[b])
+14. deprecated(findall(x,rev_old([],_1356),_1364))
+   => [rev_old/2]
+15. answers(rev_old([],_1404);length([a],_1410))
+   => [[[],_1456],[_1432,1]]-[[[],_1492],[_1468,1]]
+16. rescue(len_old(_1544,[b,c,b]),reverse([a,b],_1552))
+   => length([b,c,b],_1544),reverse([a,b],_1552)
+17. deprecated(len_old(_1608,[]);len_old(_1626,[c,a]))
+   => [len_old/2]
+18. answers(findall(x,concat_old([a,a,b],[],_1694),_1702))
+   => [[_1712,[x]]]-[[_1736,[x]]]
+19. rescue(findall(x,reverse([a,b],_1784),_1804))
+   => findall(x,reverse([a,b],_1784),_1804)
+20. deprecated(concat_old([c,a,b],[c],_1866))
+   => [concat_old/3]
+21. answers(len_old(_1922,[c,c,b]))
+   => [[3]]-[[3]]
+22. rescue(findall(x,rev_old([a,a,b],_2000),_2008))
+   => findall(x,reverse([a,a,b],_2000),_2008)
+23. deprecated(concat_old([c,c],[b],_2070))
+   => [concat_old/3]
+24. answers(concat_old([a,a],[],_2124),member_old([],a))
+   => []-[]
+25. rescue(reverse([a,b],_2170);member_old([a,b,b],a))
+   => reverse([a,b],_2170);member(a,[a,b,b])
+26. deprecated(concat_old([c,b,a],[a,c],_2284))
+   => [concat_old/3]
+27. answers(findall(x,length([a],_2324),_2338))
+   => [[_2348,[x]]]-[[_2372,[x]]]
+28. rescue(append([a],[b],_2422),rev_old([a],_2446))
+   => append([a],[b],_2422),reverse([a],_2446)
+29. deprecated(findall(x,len_old(_2502,[a,b]),_2512))
+   => [len_old/2]
+30. answers(concat_old([b,c],[],_2566),concat_old([b,b,b],[],_2592))
+   => [[[b,c],[b,b,b]]]-[[[b,c],[b,b,b]]]
+31. rescue(concat_old([b],[a],_2742))
+   => append([a],[b],_2742)
+32. deprecated(concat_old([],[b,c,b],_2798),append([a],[b],_2806))
+   => [concat_old/3]
+33. answers(member_old([],b),concat_old([b,b],[a],_2890))
+   => []-[]
+34. rescue(findall(x,member_old([],b),_2938))
+   => findall(x,member(b,[]),_2938)
+35. deprecated(reverse([a,b],_2980))
+   => []
+36. answers(len_old(_3018,[]))
+   => [[0]]-[[0]]
+37. rescue(len_old(_3076,[]);len_old(_3088,[a]))
+   => length([],_3076);length([a],_3088)
+38. deprecated(findall(x,member_old([],b),_3150))
+   => [member_old/2]
+39. answers(concat_old([c,a],[a,b],_3216);concat_old([],[b,c,c],_3242))
+   => [[[a,b,c,a],_3324],[_3258,[b,c,c]]]-[[[a,b,c,a],_3402],[_3336,[b,c,c]]]
+40. rescue(rev_old([],_3438))
+   => reverse([],_3438)
+41. deprecated(findall(x,concat_old([c,b],[c,a,a],_3504),_3512))
+   => [concat_old/3]
+42. answers(len_old(_3568,[b,a,a]),len_old(_3592,[a,c,b]))
+   => [[3,3]]-[[3,3]]
+43. rescue(findall(x,length([a],_3670),_3684))
+   => findall(x,length([a],_3670),_3684)
+44. deprecated(rev_old([c,a,c],_3738))
+   => [rev_old/2]
+45. answers(findall(x,rev_old([a],_3784),_3792))
+   => [[_3802,[x]]]-[[_3826,[x]]]
+46. rescue(len_old(_3878,[a]))
+   => length([a],_3878)
+47. deprecated(length([a],_3914))
+   => []
+48. answers(findall(x,concat_old([a,a],[b,b,a],_3980),_3988))
+   => [[_3998,[x]]]-[[_4022,[x]]]
+49. rescue(append([a],[b],_4072))
+   => append([a],[b],_4072)
+50. deprecated(length([a],_4112),concat_old([c,c],[a,c],_4150))
+   => [concat_old/3]
+51. answers(findall(x,member_old([c],a),_4210))
+   => [[[]]]-[[[]]]
+52. rescue(concat_old([c,c],[],_4282))
+   => append([],[c,c],_4282)
+53. deprecated(len_old(_4334,[a,c,a]),concat_old([c],[c],_4356))
+   => [concat_old/3,len_old/2]
+54. answers(append([a],[b],_4416),length([a],_4434))
+   => [[[a,b],1]]-[[[a,b],1]]
+55. rescue(findall(x,length([a],_4540),_4554))
+   => findall(x,length([a],_4540),_4554)
+56. deprecated(findall(x,concat_old([],[b,c],_4604),_4612))
+   => [concat_old/3]
+57. answers(len_old(_4656,[a]);len_old(_4662,[]))
+   => [[1,_4704],[_4680,0]]-[[1,_4740],[_4716,0]]
+58. rescue(member_old([],a);rev_old([c,b],_4794))
+   => member(a,[]);reverse([c,b],_4794)
+59. deprecated(findall(x,concat_old([a,c,b],[],_4866),_4874))
+   => [concat_old/3]
+60. answers(rev_old([b,c],_4926))
+   => [[[c,b]]]-[[[c,b]]]
+61. rescue(append([a],[b],_5010);rev_old([],_5028))
+   => append([a],[b],_5010);reverse([],_5028)
+62. deprecated(findall(x,rev_old([c,b],_5086),_5094))
+   => [rev_old/2]
+63. answers(concat_old([],[c,a],_5148))
+   => [[[c,a]]]-[[[c,a]]]
+64. rescue(concat_old([],[],_5232))
+   => append([],[],_5232)
+65. deprecated(member_old([],a),rev_old([a,b],_5286))
+   => [member_old/2,rev_old/2]
+66. answers(member_old([b],b);len_old(_5360,[c]))
+   => [[_5390],[1]]-[[_5414],[1]]
+67. rescue(member_old([c],a),len_old(_5478,[b,a,c]))
+   => member(a,[c]),length([b,a,c],_5478)
+68. deprecated(findall(x,rev_old([a,c,a],_5550),_5558))
+   => [rev_old/2]
+69. answers(rev_old([c,a],_5610),length([a],_5616))
+   => [[[a,c],1]]-[[[a,c],1]]
+70. rescue(rev_old([a,a],_5734),concat_old([c],[c,b],_5760))
+   => reverse([a,a],_5734),append([c,b],[c],_5760)
+71. deprecated(member_old([c],a);member_old([],a))
+   => [member_old/2]
+72. answers(reverse([a,b],_5872);concat_old([c,a],[b,a,b],_5922))
+   => [[[b,a],_6004],[_5938,[b,a,b,c,a]]]-[[[b,a],_6082],[_6016,[b,a,b,c,a]]]
+73. rescue(member_old([c,a,a],b))
+   => member(b,[c,a,a])
+74. deprecated(length([a],_6170))
+   => []
+75. answers(rev_old([b,c],_6216))
+   => [[[c,b]]]-[[[c,b]]]
+76. rescue(concat_old([],[a,b,b],_6318);append([a],[b],_6326))
+   => append([a,b,b],[],_6318);append([a],[b],_6326)
+77. deprecated(rev_old([c,a],_6398),member_old([c],a))
+   => [member_old/2,rev_old/2]
+78. answers(findall(x,rev_old([a,c],_6480),_6488))
+   => [[_6498,[x]]]-[[_6522,[x]]]
+79. rescue(concat_old([a,c],[c,b,b],_6602),member_old([a,a,a],b))
+   => append([c,b,b],[a,c],_6602),member(b,[a,a,a])
+80. deprecated(findall(x,len_old(_6696,[a,a,b]),_6706))
+   => [len_old/2]
+81. answers(rev_old([],_6746);len_old(_6768,[a,c,a]))
+   => [[[],_6810],[_6786,3]]-[[[],_6846],[_6822,3]]
+82. rescue(rev_old([],_6882))
+   => reverse([],_6882)
+83. deprecated(findall(x,len_old(_6914,[]),_6924))
+   => [len_old/2]
+84. answers(len_old(_6968,[a]),rev_old([],_6976))
+   => [[1,[]]]-[[1,[]]]
+85. rescue(findall(x,rev_old([a],_7058),_7066))
+   => findall(x,reverse([a],_7058),_7066)
+86. deprecated(member_old([c],b))
+   => [member_old/2]
+87. answers(rev_old([],_7154),length([a],_7160))
+   => [[[],1]]-[[[],1]]
+88. rescue(findall(x,reverse([a,b],_7242),_7262))
+   => findall(x,reverse([a,b],_7242),_7262)
+89. deprecated(len_old(_7314,[b,b,a]);member_old([c,c,b],b))
+   => [len_old/2,member_old/2]
+90. answers(findall(x,append([a],[b],_7400),_7420))
+   => [[_7430,[x]]]-[[_7454,[x]]]
+91. rescue(member_old([c],b);append([a],[b],_7516))
+   => member(b,[c]);append([a],[b],_7516)
+92. deprecated(member_old([c],a))
+   => [member_old/2]
+93. answers(member_old([c,a,a],a);member_old([c,b],a))
+   => [[],[]]-[[],[]]
+94. rescue(concat_old([b,c],[a,c,a],_7752))
+   => append([a,c,a],[b,c],_7752)
+95. deprecated(concat_old([a,b],[a],_7808))
+   => [concat_old/3]
+96. answers(findall(x,rev_old([c],_7854),_7862))
+   => [[_7872,[x]]]-[[_7896,[x]]]
+97. rescue(reverse([a,b],_7944),member_old([],a))
+   => reverse([a,b],_7944),member(a,[])
+98. deprecated(member_old([a],b))
+   => [member_old/2]
+99. answers(append([a],[b],_8056),member_old([a],b))
+   => []-[]
+100. rescue(concat_old([],[a],_8128))
+   => append([a],[],_8128)
+101. deprecated(findall(x,length([a],_8164),_8178))
+   => []
+102. answers(length([a],_8206))
+   => [[1]]-[[1]]
+103. rescue(findall(x,len_old(_8274,[a]),_8284))
+   => findall(x,length([a],_8274),_8284)
+104. deprecated(findall(x,rev_old([b,a,a],_8344),_8352))
+   => [rev_old/2]
+105. answers(length([a],_8392);reverse([a,b],_8404))
+   => [[1,_8468],[_8432,[b,a]]]-[[1,_8516],[_8480,[b,a]]]
+106. rescue(concat_old([a,c],[a],_8572);concat_old([a,b,c],[a,c,a],_8616))
+   => append([a],[a,c],_8572);append([a,c,a],[a,b,c],_8616)
+107. deprecated(rev_old([b,a,c],_8690);len_old(_8712,[c,c,b]))
+   => [len_old/2,rev_old/2]
+108. answers(member_old([a],b),concat_old([b,a],[a,b,c],_8816))
+   => []-[]
+109. rescue(findall(x,len_old(_8854,[]),_8864))
+   => findall(x,length([],_8854),_8864)
+110. deprecated(findall(x,rev_old([b,a,c],_8924),_8932))
+   => [rev_old/2]
+111. answers(rev_old([],_8972);rev_old([a,c,a],_8996))
+   => [[[],_9054],[_9012,[a,c,a]]]-[[[],_9108],[_9066,[a,c,a]]]
+112. rescue(member_old([a],a))
+   => member(a,[a])
+113. deprecated(concat_old([c,c],[b,a,c],_9216))
+   => [concat_old/3]
+114. answers(findall(x,append([a],[b],_9258),_9278))
+   => [[_9288,[x]]]-[[_9312,[x]]]
+115. rescue(append([a],[b],_9362),member_old([],b))
+   => append([a],[b],_9362),member(b,[])
+116. deprecated(findall(x,member_old([c],b),_9440))
+   => [member_old/2]
+117. answers(findall(x,concat_old([b,a],[b],_9500),_9508))
+   => [[_9518,[x]]]-[[_9542,[x]]]
+118. rescue(len_old(_9600,[c,a]);rev_old([],_9608))
+   => length([c,a],_9600);reverse([],_9608)
+119. deprecated(rev_old([a],_9666))
+   => [rev_old/2]
+120. answers(member_old([c,c],b))
+   => []-[]
+121. rescue(member_old([a,c],a))
+   => member(a,[a,c])
+122. deprecated(rev_old([],_9798),member_old([],b))
+   => [member_old/2,rev_old/2]
+123. answers(rev_old([a,c,a],_9880))
+   => [[[a,c,a]]]-[[[a,c,a]]]
+124. rescue(member_old([c],b),concat_old([c,c,c],[],_10006))
+   => member(b,[c]),append([],[c,c,c],_10006)
+125. deprecated(findall(x,concat_old([a,b],[],_10074),_10082))
+   => [concat_old/3]
+126. answers(rev_old([],_10122),rev_old([b,c,c],_10146))
+   => [[[],[c,c,b]]]-[[[],[c,c,b]]]
+127. rescue(length([a],_10258))
+   => length([a],_10258)
+128. deprecated(reverse([a,b],_10292);len_old(_10326,[a,b,c]))
+   => [len_old/2]
+129. answers(findall(x,member_old([],a),_10382))
+   => [[[]]]-[[[]]]
+130. rescue(rev_old([b],_10446),append([a],[b],_10454))
+   => reverse([b],_10446),append([a],[b],_10454)
+131. deprecated(member_old([c,c],a))
+   => [member_old/2]
+132. answers(findall(x,rev_old([],_10564),_10572))
+   => [[_10582,[x]]]-[[_10606,[x]]]
+133. rescue(len_old(_10664,[a,a]);member_old([a,b,c],a))
+   => length([a,a],_10664);member(a,[a,b,c])
+134. deprecated(findall(x,len_old(_10740,[]),_10750))
+   => [len_old/2]
+135. answers(concat_old([c,b],[],_10804))
+   => [[[c,b]]]-[[[c,b]]]
+136. rescue(concat_old([b,b],[b,c],_10912),concat_old([],[c,c,a],_10938))
+   => append([b,c],[b,b],_10912),append([c,c,a],[],_10938)
+137. deprecated(concat_old([a,c,a],[b,a],_11026),reverse([a,b],_11032))
+   => [concat_old/3]
+138. answers(rev_old([b],_11096),member_old([],a))
+   => []-[]
+139. rescue(member_old([b,a],a);rev_old([b,c,c],_11178))
+   => member(a,[b,a]);reverse([b,c,c],_11178)
+140. deprecated(append([a],[b],_11232);member_old([],b))
+   => [member_old/2]
+141. answers(member_old([b],a);length([a],_11308))
+   => [[1]]-[[1]]
+142. rescue(findall(x,len_old(_11394,[a,b,a]),_11404))
+   => findall(x,length([a,b,a],_11394),_11404)
+143. deprecated(findall(x,concat_old([c],[b,c],_11466),_11474))
+   => [concat_old/3]
+144. answers(append([a],[b],_11516),len_old(_11538,[c]))
+   => [[[a,b],1]]-[[[a,b],1]]
+145. rescue(member_old([],a),append([a],[b],_11648))
+   => member(a,[]),append([a],[b],_11648)
+146. deprecated(len_old(_11722,[b,b,c]),member_old([c,b,a],b))
+   => [len_old/2,member_old/2]
+147. answers(findall(x,member_old([b,b,b],b),_11832))
+   => [[[x,x,x]]]-[[[x,x,x]]]
+148. rescue(member_old([a,c],a))
+   => member(a,[a,c])
+149. deprecated(findall(x,member_old([b],b),_11986))
+   => [member_old/2]
+150. answers(len_old(_12024,[]),member_old([],b))
+   => []-[]
+151. rescue(member_old([b],a))
+   => member(a,[b])
+152. deprecated(member_old([],a))
+   => [member_old/2]
+153. answers(rev_old([c,b],_12164);len_old(_12180,[a,b]))
+   => [[[b,c],_12234],[_12198,2]]-[[[b,c],_12282],[_12246,2]]
+154. rescue(concat_old([b,b,c],[a],_12344);member_old([],b))
+   => append([a],[b,b,c],_12344);member(b,[])
+155. deprecated(concat_old([c,c,a],[b,c,b],_12442))
+   => [concat_old/3]
+156. answers(len_old(_12492,[c,c]);reverse([a,b],_12500))
+   => [[2,_12564],[_12528,[b,a]]]-[[2,_12612],[_12576,[b,a]]]
+157. rescue(reverse([a,b],_12648),concat_old([c,c],[a],_12686))
+   => reverse([a,b],_12648),append([a],[c,c],_12686)
+158. deprecated(concat_old([],[c,a,b],_12754),len_old(_12770,[c,b]))
+   => [concat_old/3,len_old/2]
+159. answers(findall(x,concat_old([],[b],_12838),_12846))
+   => [[_12856,[x]]]-[[_12880,[x]]]
+160. rescue(length([a],_12928),concat_old([b,b],[c],_12960))
+   => length([a],_12928),append([c],[b,b],_12960)
+161. deprecated(len_old(_13012,[b]),rev_old([b],_13026))
+   => [len_old/2,rev_old/2]
+162. answers(findall(x,rev_old([],_13084),_13092))
+   => [[_13102,[x]]]-[[_13126,[x]]]
+163. rescue(reverse([a,b],_13174);member_old([c,a,c],a))
+   => reverse([a,b],_13174);member(a,[c,a,c])
+164. deprecated(findall(x,member_old([],a),_13264))
+   => [member_old/2]
+165. answers(findall(x,rev_old([a,b],_13316),_13324))
+   => [[_13334,[x]]]-[[_13358,[x]]]
+166. rescue(findall(x,rev_old([a,c,b],_13424),_13432))
+   => findall(x,reverse([a,c,b],_13424),_13432)
+167. deprecated(concat_old([],[],_13476);member_old([a],a))
+   => [concat_old/3,member_old/2]
+168. answers(rev_old([],_13546))
+   => [[[]]]-[[[]]]
+169. rescue(member_old([c,a,b],b),rev_old([b],_13634))
+   => member(b,[c,a,b]),reverse([b],_13634)
+170. deprecated(concat_old([],[b,b,c],_13706),rev_old([a],_13718))
+   => [concat_old/3,rev_old/2]
+171. answers(length([a],_13776))
+   => [[1]]-[[1]]
+172. rescue(findall(x,append([a],[b],_13842),_13862))
+   => findall(x,append([a],[b],_13842),_13862)
+173. deprecated(append([a],[b],_13900);rev_old([a,c,a],_13936))
+   => [rev_old/2]
+174. answers(rev_old([a],_13988);rev_old([],_13994))
+   => [[[a],_14040],[_14010,[]]]-[[[a],_14082],[_14052,[]]]
+175. rescue(findall(x,len_old(_14128,[c,b]),_14138))
+   => findall(x,length([c,b],_14128),_14138)
+176. deprecated(len_old(_14178,[]))
+   => [len_old/2]
+177. answers(len_old(_14230,[a,c]);length([a],_14238))
+   => [[2,_14284],[_14260,1]]-[[2,_14320],[_14296,1]]
+178. rescue(len_old(_14372,[a,c,a]))
+   => length([a,c,a],_14372)
+179. deprecated(concat_old([],[b,a],_14422))
+   => [concat_old/3]
+180. answers(rev_old([],_14468))
+   => [[[]]]-[[[]]]
+181. rescue(rev_old([a,b],_15728);len_old(_16344,[b,c,b]))
+   => reverse([a,b],_15728);length([b,c,b],_16344)
+182. deprecated(rev_old([a,a,c],_17374);concat_old([a],[c],_17948))
+   => [concat_old/3,rev_old/2]
+183. answers(rev_old([c],_18604),member_old([],b))
+   => []-[]
+184. rescue(member_old([],b);reverse([a,b],_19708))
+   => member(b,[]);reverse([a,b],_19708)
+185. deprecated(concat_old([c,a],[],_20692);concat_old([c,c],[a,b],_21566))
+   => [concat_old/3]
+186. answers(member_old([c],a),rev_old([a,a,a],_22920))
+   => []-[]
+187. rescue(rev_old([a],_23732);len_old(_24198,[c,b]))
+   => reverse([a],_23732);length([c,b],_24198)
+188. deprecated(len_old(_24926,[b]);len_old(_25544,[c,c,a]))
+   => [len_old/2]
+189. answers(len_old(_26050,[]);concat_old([c],[c,c,b],_26926))
+   => [[0,_27346],[_27298,[c,c,b,c]]]-[[0,_27440],[_27392,[c,c,b,c]]]
+190. rescue(member_old([b,a],b),concat_old([],[c,c,b],_28842))
+   => member(b,[b,a]),append([c,c,b],[],_28842)
+191. deprecated(member_old([c],a),rev_old([c],_29992))
+   => [member_old/2,rev_old/2]
+192. answers(findall(x,len_old(_30796,[a,c]),_31240))
+   => [[_31468,[x]]]-[[_31526,[x]]]
+193. rescue(findall(x,rev_old([b],_31986),_32222))
+   => findall(x,reverse([b],_31986),_32222)
+194. deprecated(member_old([b],a);append([a],[b],_32982))
+   => [member_old/2]
+195. answers(concat_old([c,a],[c,b],_34290);concat_old([c,a],[b,b],_35164))
+   => [[[c,b,c,a],_35632],[_35560,[b,b,c,a]]]-[[[c,b,c,a],_35750],[_35678,[b,b,c,a]]]
+196. rescue(findall(x,len_old(_36496,[b,c,b]),_37416))
+   => findall(x,length([b,c,b],_36496),_37416)
+197. deprecated(append([a],[b],_37778))
+   => []
+198. answers(findall(x,rev_old([b],_38766),_38978))
+   => [[_39206,[x]]]-[[_39264,[x]]]
+199. rescue(rev_old([c],_39724))
+   => reverse([c],_39724)
+200. deprecated(length([a],_40338),rev_old([c],_40752))
+   => [rev_old/2]
