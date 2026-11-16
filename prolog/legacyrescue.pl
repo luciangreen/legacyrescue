@@ -25,7 +25,11 @@ rescue((A, B), (A2, B2)) :- !, rescue(A, A2), rescue(B, B2).
 rescue((A ; B), (A2 ; B2)) :- !, rescue(A, A2), rescue(B, B2).
 rescue(\+ A, \+ A2) :- !, rescue(A, A2).
 rescue(findall(T, A, L), findall(T, A2, L)) :- !, rescue(A, A2).
-rescue(G, G2) :- functor(G, N, Ar), rule(N/Ar, New, Order), !, G =.. [_|Args], maplist([I, X]>>nth1(I, Args, X), Order, Args2), G2 =.. [New|Args2].
+rescue(G, G2) :- functor(G, N, Ar), rule(N/Ar, New, Order), !, G =.. [_|Args], pick(Order, Args, Args2), G2 =.. [New|Args2].
+
+% pick(+Order, +Args, -Picked): plain recursion, so the goal's variables stay shared with the new goal.
+pick([], _, []).
+pick([I|Is], Args, [X|Xs]) :- nth1(I, Args, X), pick(Is, Args, Xs).
 rescue(G, G).
 
 deprecated(G, Ds) :- findall(N/A, old_in(G, N/A), D0), sort(D0, Ds).
